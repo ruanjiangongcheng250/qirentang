@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.9.1.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <script src="js/js.js"></script>
+    <title>席仁堂</title>
+    <style>
+        #one{width: 100%;height: 405px;background-color: #3c763d;position: relative;overflow: hidden}
+        #one div.controller{display: none;position: absolute;width: 30px;height: 60px;top: 1.4rem;
+            background-color:transparent;font-size: 45px;font-weight: bold;color: orange;text-align: center;
+            line-height: 60px;font-family:宋体}
+        #one div.controller.on{background-color: rgba(0,0,0,.2);cursor: pointer}
+        #one div.left{left: .2rem;}
+        #one div.right{right: .2rem;}
+        .list{width: 20000px;height: 100%;background-color: #2b2b2b;position: absolute}
+        .list li{float: left;}
+        .list li img{width: 1092px ; height: 100%;}
+        #one .num{bottom: 40px;left: 0;position: absolute;text-align: center;width: 100%;}
+        #one .num li{display: inline-block;width: .08rem;height: .08rem;border-radius: 50%;background-color: #666;
+            cursor: pointer;margin: 0 .08rem;vertical-align: middle;}
+        #one .num li.on{background-color: #fff;border: 2px solid #666;}
+        #two{width: 100%;height: 13.43rem;background-color:#f4f4f4;}
+        #two div.more{width: 100%;height: 2.1rem;margin-bottom: .3rem}
+        .more-list{width: 100%;height: 100%;box-sizing: border-box;font-size: 15px;list-style: none}
+        .more-list li{float: left;width: 25%;height: 100%;background-repeat: no-repeat;text-align: center}
+        .more-list li div{width: 150px;height:150px;margin: 20px auto;border-radius: 50%;}
+        .more-list li:nth-child(1) div{ background-image: url("img/14.jpg");background-size: cover;}
+        .more-list li:nth-child(2) div{ background-image: url("img/9.jpg");background-size: cover}
+        .more-list li:nth-child(3) div{ background-image: url("img/10.jpg");background-size: cover}
+        .more-list li:nth-child(4) div{ background-image: url("img/13.jpg");background-size: cover}
+        .more-list p{font-size: .14rem;height: 30px;line-height: 30px;}
+        .more-list span{line-height: .2rem;display: inline-block;width: .6rem;height: .2rem;border: 1px solid #666;
+       font-size: .09rem;border-radius: 50px;cursor: pointer;}
+        .company{width: 100%;height: 327.84px;background-color: #fff}
+        .company_img{width:45%;height:100%;text-align: center;float: left;box-sizing: border-box;padding:50px 40px;}
+        .company_img img{width: 373px;height: 210px}
+        .company_txt{width:55%;height: 100%;float: left;font-size: .11rem;line-height: 1.8;overflow: hidden}
+        .company_txt p{margin:50px;text-indent: 2em;font-family: 微软雅黑;font-size: 14px}
+
+        /*业务start*/
+        .yewu{width: 100%;height: 10rem;line-height: 2;}
+        .yewu h2{font-size: .15rem;margin-top: 50px;margin-bottom: 10px}
+        .yewu-list{width: 100%;height: 1092.8px;}
+        .yewu-list li{width: 100%;height: 258px;overflow: hidden;}
+        .yewu-li{width: 50%;height: 50%;float: left;margin-top:50px;box-sizing: border-box;padding: 0 62px}
+        .yewu-list h3{ font-size:20px;text-align: left;color: red}
+        .yewu-list p{font-size: 12px}
+        .yewu-li-img{width: 50%;height: 100%;float: left}
+        .yewu-li-img img{width: 300px;height: 185px;margin-top: 34px}
+        .yewu-list li:nth-child(odd) img{margin-left: 160px;}
+        .yewu-list li:nth-child(even) img{margin-left: 55px}
+        .yewu-list li:nth-child(even){background-image: url("img/bg.png")}
+        .yewu-list li:nth-child(3),.yewu-list li:nth-child(4){background-color:#fff;position: relative}
+        /*向下按钮start*/
+        @media screen and (max-width: 960px) {
+            .down {
+                display: none;
+            }
+        }
+        .down{width: 60px;height: 60px;border: 1px solid #666;position: absolute;left: 50%;top: -30px;
+            font-size: 15px;border-radius: 50%;color: black;}
+        .down i{position: absolute;left: 37%;top: 41%}
+        .down1{background-image: url("img/bg.png")}
+        .down2{background-color: #fff}
+        /*业务end*/
+    </style>
+</head>
+<body>
+<header id="header">
+    <div class="logo">
+        <div class="logo-left">
+            <div class="logo-left1">
+                <a href="index.html">席仁堂</a>
+            </div>
+            <div class="logo-left2">
+                <p>亚洲优秀徒手整形管理机构</p>
+                <p>北京席仁堂塑形骨骼健康管理机构</p>
+            </div>
+        </div>
+        <div class="logo-right">
+            <img src="img/dianhua.png">
+            <div class="tel">
+                <p>咨询电话：</p>
+                <p>400-665-8070</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li id="jianjie"><a href="#">公司简介</a></li>
+            <li id="yewu"><a href="#">公司业务</a></li>
+            <li><a href="news_center.html">新闻中心</a></li>
+            <li><a href="product_center.html">产品中心</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+        </ul>
+    </nav>
+    <!--轮播图-->
+  <section id="one">
+        <ul class="list">
+            <li><img src="img/gundong.png" alt=""></li>
+            <li><img src="img/gundong2.jpg" alt=""></li>
+        </ul>
+        <ul class="num">
+        </ul>
+        <div class="controller left"><span>&lt;</span></div>
+        <div class="controller right"><span>&gt;</span></div>
+    </section>
+<section id="two">
+    <div style="width: 100%; height: 100%; background-color: #f3f2df; box-sizing: border-box; padding: 15px">
+
+         <div class="more">
+                <ul class="more-list">
+                    <li>
+                        <div></div>
+                        <p>徒手整形</p>
+                        <span id="tushou">了解更多</span>
+                    </li>
+                    <li>
+                        <div></div>
+                        <p>中医正骨整脊</p>
+                        <span id="zhenggu">了解更多</span>
+                    </li>
+                    <li>
+                        <div></div>
+                        <p>理疗养身</p>
+                        <span id="liliao">了解更多</span>
+                    </li>
+                    <li>
+                        <div></div>
+                        <p>推拿按摩</p>
+                        <span id="anmo">了解更多</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="company">
+                <div class="company_img">
+                    <img src="img/company.png" alt="">
+                </div>
+                <div class="company_txt">
+                    <p>
+                        席仁堂是一家集理疗养生、传统疗法，推拿按摩，整脊正骨，徒手整形，慢性病调理为一体的专业研究中心。
+                        坐落于北京市海淀区科学院南路21号，秉承“同修仁德，济世养生”的核心理念，坚持“名医、名店”的发展战略，
+                        以技术为根本赢得口碑，秉承“服务予民、健康予民、奉献予民、满意予民”的办院宗旨，依托顶级的专家团队，
+                        丰富的临床经验，精湛的技术，一流的人文环境，人性化的服务模式，针对各种疑难杂症，
+                        为广大群众提供一对一的个性化的高端健康综合服务。弘扬祖国医学，还原传统诊疗，以全新“治未病”
+                        的医疗服务理念为您提供健康、康复、养生保健服务
+                    </p>
+                </div>
+            </div>
+            <div class="yewu" id="yewu">
+                <h2 style="text-align: center">公司业务</h2>
+                <ul class="yewu-list">
+                    <li>
+                        <div class="line" style="border: 2px solid gainsboro;margin: 0 70px"></div>
+                            <div class="yewu-li">
+                                <h3 style="color: #970d00">徒手整形</h3>
+                                <p>
+                                    徒手整形是指通过中医手法直接作用于人体脸部，在一定程度上塑造以脸部为主要对象的美容整形效果的一种按摩手法。因此，徒手整形就是推拿按摩的一种。
+                            由于徒手整形效果仅仅主要作用于人体脸部、效果有限、单纯手法应用，现已被具有全面彻底、作用高效、手法与物理结合等特点的新一代美容整形技术——物理整形全面取代</p>
+                    
+                                </p>
+                            </div>
+                            <div class="yewu-li-img">
+                                <img src="img/tushou.jpg" alt="">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="yewu-li-img">
+                            <img src="img/tushou.jpg" alt="">
+                        </div>
+                        <div class="yewu-li">
+                            <h3 style="color: #970d00">中医正骨整脊</h3>
+                            <p>
+                                医家有云：“无名病痛从筋治，筋柔骨正百病消”，正所谓“病诸中，必形诸外”，人之经脉由头颈以下，贯于四肢百骸，五脏六腑，凡人之病气，除四诊而外，循脊骨皆可查因由；骨不正，则外邪必侵，麻、痹、胀、痛随之而生，治之以正骨、理筋、调曲、导引四步，经络通，血脉畅，血气乃和，外因消弭则内病必除，正气充盈而百病必消。
+                    
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="down down1">
+                            <i id="down-1" class="icon iconfont">&#xe62e;</i>
+                        </div>
+                        <div class="yewu-li">
+                            <h3 style="color: #970d00">理疗养生</h3>
+                            <p>
+                                颈椎侧弯、歪脖子矫正，大椎包过大缩小 、高低肩平衡调整、宽肩缩窄、肩胛骨后凸调整 、含胸驼背整骨矫正 、脊柱侧弯、高低背整骨复位康复调整 、腰椎生理曲度过大、反张矫正。 骶骨偏移、尾椎不正矫正。
+                    
+                            </p>
+                        </div>
+                        <div class="yewu-li-img">
+                            <img src="img/tushou.jpg" alt="">
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="yewu-li-img">
+                            <img src="img/tushou.jpg" alt="">
+                        </div>
+                        <div class="yewu-li">
+                            <h3 style="color: #970d00">推拿按摩</h3>
+                            <p></p>
+                        </div>
+                        <div class="down down2">
+                            <i id="down-2" class="icon iconfont">&#xe62e;</i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    <div id="goTop">
+        <a href="#"><img src="img/goTop.png"></a>
+    </div>
+</section>
+    <footer>
+        <div class="tel">
+            <img src="img/tel.jpg">
+            <p>预约电话</p>
+            <p>400-665-8070</p>
+            <p>010-82523889</p>
+        </div>
+        <div class="middle_foot">
+            <div class="foot_1">
+                <ul>
+                    <li><a title="人才招聘" href="#" target="_blank">人才招聘</a></li>
+                    <li><a title="企业文化" href="#" target="_blank">企业文化</a></li>
+                    <li><a title="联系我们" href="#" target="_blank">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="foot_2">
+                <ul>
+                    <li>地址：北京市海淀区科学院南路21号</li>
+                    <li>联系电话：400-665-8070</li>
+                    <li>邮箱：<a href="mailto:809570088@qq.com">809570088@qq.com</a></li>
+                    <li>网址：<a href="http://www.xirentang.cn">www.xirentang.cn</a></li>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>版权所有&nbsp;&copy;&nbsp;2015齐仁堂健康管理（北京）有限公司&nbsp;&nbsp;&nbsp;京ICP备：<a href="http://www.miitbeian.gov.cn/" target="_self">15054439号</a>&nbsp;&nbsp;&nbsp;技术支持：优品科技</p>
+            </div>
+        </div>
+        <div class="qrCode">
+            <img src="img/qrCode.jpg" >
+            <p>关注二维码 扫一扫</p>
+        </div>
+    </footer>
+<script>
+    var cssEl =  document.createElement('style');
+    document.documentElement.firstElementChild.appendChild(cssEl);
+    //设置html的font-size
+    function setRem(){
+        var dpr = 1;
+        var pxPerRem = document.documentElement.clientWidth * dpr / 10;
+        cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;}';
+    };
+    //1rem = 136px
+    setRem();
+</script>
+
+    <script>
+        //nav样式
+        $(function () {
+            $("#one").hover(function () {
+                $('.controller').addClass('on').stop().show(500)
+            }, function () {
+                $('.controller').stop().hide(500)
+            });
+        });
+        //轮播
+        $(function(){
+            var i=0;
+            // 克隆节点
+            var clone=$(".list li").first().clone();
+            $(".list").append(clone);
+            var size=$(".list li").size();
+            //创建底部按钮
+            for(var j=0;j<size-1;j++){
+                $(".num").append("<li></li>")
+            }
+            $(".num li:first").addClass("on")
+            //left
+            $(".left").click(function(){
+                moveL();
+            });
+            //right
+            $(".right").click(function(){
+                moveR();
+            });
+            function moveL(){
+                i++;
+                if(i==size){
+                    $(".list").css('left',0);
+                    i=1;
+                };
+                if(i==4){
+                    $(".num li").eq(0).addClass('on').siblings().removeClass('on')
+                }
+                $(".list").stop().animate({
+                    left:-1092*i
+                },500);
+                $(".num li").eq(i).addClass('on').siblings().removeClass('on')
+            }
+            function moveR(){
+                i--;
+                if(i==-1){
+                    $(".list").css('left',-(size-1)*1092)
+                    i=size-2;
+                }
+                $(".list").stop().animate({
+                    left:-1092*i
+                },500);
+                $(".num li").eq(i).addClass('on').siblings().removeClass('on')
+            }
+
+            //底部圆点鼠标悬浮事件
+            $(".num li").hover(function(){
+                var index=$(this).index();
+                i=index;
+                $(".list").stop().animate({
+                    left:-1092*index
+                },500);
+                $(this).addClass('on').siblings().removeClass('on')
+            })
+            // 自动播放
+            var timer=setInterval(function(){
+                moveL();
+            },4000);
+
+            $("#one").hover(function(){
+                clearInterval(timer)
+            },function(){
+                timer=setInterval(function(){
+                    moveL();
+                },4000)
+            })
+        })
+        //导航到指定位置
+        $(function () {
+            $("#jianjie").click(function () {
+                var len = $(".more-list").offset().top;
+                $('html,body').animate({scrollTop: len}, 800);
+            });
+
+            $("#yewu").click(function () {
+                var len = $(".yewu").offset().top - 50;
+                $('html,body').animate({scrollTop: len}, 800);
+            });
+
+            $(".down1").click(function () {
+                var len = $(".yewu-list li:eq(2)").offset().top;
+                $('html,body').animate({scrollTop: len}, 500);
+            });
+
+            $(".down2").click(function () {
+                var len = $(".yewu-list li:eq(3)").offset().top;
+                $('html,body').animate({scrollTop: len}, 500);
+            })
+        })
+
+
+    </script>
+</body>
+</html>

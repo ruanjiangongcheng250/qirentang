@@ -1,0 +1,426 @@
+/*格式化所有浏览器*/
+@font-face {font-family: "iconfont";
+    src: url('../iconfont/iconfont.eot?t=1468649320'); /* IE9*/
+    src: url('../iconfont/iconfont.eot?t=1468649320#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../iconfont/iconfont.woff?t=1468649320') format('woff'), /* chrome, firefox */
+    url('../iconfont/iconfont.ttf?t=1468649320') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../iconfont/iconfont.svg?t=1468649320#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-dianhua:before { content: "\e634"; }
+.icon-u-arrow3-down:before { content: "\e62e"; }
+* {
+    margin: 0px;
+    padding:0px
+}
+body {
+    width: 1076px;
+    margin: 0 auto;
+    background-color: #edf3f9;
+}
+
+body, button, input, select, textarea {
+    font: 12px/1.6 "Hiragino Sans GB",STHeiti,"微软黑体","Microsoft YaHei",Helvetica,Arial,serif;
+}
+
+.wrap{
+    width: 1366px;
+    padding: 0 136.6px;
+    box-sizing: border-box;
+}
+
+/*header部分*/
+#header {
+    height:90px;
+    width: 1076px;
+    background-color: white;
+}
+#header .logo{
+    height:90px;
+    width: 1076px;
+    display: inline-block;
+}
+#header .logo .logo-left{
+    height:90px;
+    width:400px;
+    margin-left: 100px;
+    float: left;
+}
+#header .logo .logo-left .logo-left1{
+    height:50px;
+    width:130px;
+    float: left;
+    line-height: 50px;
+    font-size: 35px;
+    font-family: 华文隶书;
+    font-weight: bold;
+    margin: 20px 0;
+}
+#header .logo .logo-left .logo-left1 a{
+    color: black;
+    text-decoration: none;
+}
+#header .logo .logo-left .logo-left2{
+    height:50px;
+    width:220px;
+    float: left;
+    font-size: 14px;
+    line-height: 25px;
+    margin: 20px 0;
+    padding-left: 20px;
+    border-left: 2px solid black;
+}
+
+#header .logo .logo-right{
+    height:50px;
+    width:300px;
+    margin: 20px 0;
+    float: right;
+}
+#header .logo .logo-right img{
+    float: left;
+}
+#header .logo .logo-right .tel{
+    font-size: 14px;
+    float: left;
+    margin: 0 15px;
+}
+
+#nav {
+    height: 55px;
+    background-color: #e9e8d5;
+}
+
+#nav ul {
+    margin: 0 auto;
+    height: 55px;
+    width: 720px;
+}
+
+#nav ul li{
+    list-style: none;
+    width:120px;
+    line-height: 52px;
+    float:left;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+#nav ul li a {
+    height:53px;
+    width: 120px;
+    display: block;
+}
+#nav ul li a.on {
+    border-bottom: 2px solid red;
+    font-size: large;
+}
+    /*新闻中心*/
+#nav ul li a:link ,#xirentang a:link,#news li a:link{
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li a:visited ,#xirentang a:visited ,#news li a:visited{
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li a:hover{
+    font-size: larger;
+    text-decoration: none;
+    color: black;
+}
+#xirentang a:hover ,#news li a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+#nav ul li a:active, #xirentang a:active,#news li a:active{
+    text-decoration: none;
+    color: black;
+}
+
+#hengfu , #hengfu img {
+    width:1076px;
+    height:170px;
+}
+
+#newsContainer {
+    background-color: #e6e5e5;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+#news {
+    margin: 0 auto;
+    width: 1000px;
+    background-color: white;
+    text-align: center;
+    padding: 60px 0;
+    background-image: url("../img/xiangyun.png");
+
+}
+
+
+#news h2 {
+    color:orange;
+}
+#news hr {
+    width:700px;
+    margin: 0 auto;
+}
+
+#news ul li {
+    list-style: none;
+    height: 30px;
+    width: 650px;
+    margin: 0 auto;
+    border-bottom: 1px dashed darkgrey;
+    line-height: 30px;
+    color: darkgrey;
+}
+
+#news .con {
+    float: left;
+}
+
+#news .date {
+    float:right;
+}
+.news {
+    width: 650px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+
+}
+@media screen and (min-width: 600px) {
+
+}
+@media screen and (min-width: 1200px){
+
+}
+
+/*联系我们*/
+
+#contactUs {
+    width: 690px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+#contactLeft {
+    width: 340px;
+    height: 290px;
+    float: left;
+    text-align: left;
+    padding: 5px;
+}
+
+#map {
+    width: 320px;
+    height: 300px;
+    float: left;
+    margin-left: 20px;
+}
+
+.desc {
+    text-indent: 2em;
+}
+
+/*
+返回顶部
+*/
+#goTop {
+    width:32px;
+    height:32px;
+    position: fixed;
+    bottom:30px;
+    right:20px;
+    display: none;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 180px;
+    color: #222;
+    background: #d8d8d8;
+    display:inline-block;
+}
+
+footer div{
+    float: left;
+    margin: 15px 0;
+}
+footer ul li {
+    line-height: 23px;
+    list-style: none;
+    font-size: 13px;
+}
+footer .tel{
+    width: 200px;
+    height: 200px;
+    margin: 0 0px 0 60px;
+    background: #eeeeee;
+    position: relative;
+    top: -20px;
+}
+footer .tel img {
+    width:60px;
+    height: 40px;
+    margin: 50px 70px 0 70px;
+}
+footer .tel p{
+    text-align: center;
+    font-size: 16px;
+}
+
+footer .middle_foot{
+    margin: 0 50px;
+}
+footer .middle_foot .foot_1,footer .middle_foot .foot_2{
+    float: left;
+    height: 110px;
+    margin: 15px;
+}
+footer .middle_foot .copyright{
+    height: 20px;
+    clear: both;
+    margin: 10px 0;
+}
+footer .foot_1 ul{
+    margin: 15px 30px;
+}
+footer .foot_1 ul li{
+    width:70px;
+}
+footer .foot_2 ul{
+    margin: 15px 20px;
+}
+footer .foot_2 ul li{
+    width:235px;
+}
+footer a{
+    color: #222;
+    text-decoration: none;
+}
+footer a:hover{
+    color: #222;
+    text-decoration: underline;
+}
+footer  .qrCode{
+    height:150px;
+}
+footer .qrCode img{
+    width: 125px;
+    height: 125px;
+}
+footer .qrCode p{
+    text-align: center;
+}
+
+/*产品中心*/
+
+#productContainer {
+    background-color: #e6e5e5;
+    padding-top: 10px;
+    padding-bottom: 60px;
+}
+
+#products {
+    margin: 0 auto;
+    width: 1000px;
+    background-color: white;
+    background-image: url("../img/xiangyun.png");
+    text-align: center;
+    padding: 60px 0;
+}
+
+#products h2 {
+    color:orange;
+}
+#products hr {
+    width:700px;
+    margin: 0 auto;
+}
+
+#products ul{
+    display: inline-block;
+    margin: 0 auto;
+}
+
+#products ul li {
+    list-style: none;
+    /*    height: 110px;
+        width: 320px;*/
+    margin: 6px;
+    border: 1px solid #c6c6c6;
+    border-left: #d7a647 solid 4px;
+    float: left;
+
+}
+
+#products ul li img{
+    width: 124px;
+    height: 94px;
+    margin: 8px;
+    float: left;
+}
+#products ul li #product_item{
+    width: 160px;
+    height: 94px;
+    margin: 8px 12px 8px 8px;
+    float: left;
+}
+#products ul li #product_item h3{
+    color: #333;
+    font-weight:normal;
+    text-align: left;
+    line-height: 16px;
+}
+#products ul li #product_item .desc{
+    color: #333;
+    width: 160px;
+    height: 74px;
+    text-align: left;
+    font-size: 8px;
+    line-height: 18.5px;
+    margin-top: 4px;
+    float: left;
+}
+
+/*  产品详细页面   */
+
+#products #product_detail_01{
+    display: inline-block;
+}
+#products #product_detail_01 img{
+    width: 200px;
+    height: 212px;
+    float: left;
+}
+#products #product_detail_01 #product_desc{
+    width: 480px;
+    text-align: left;
+    text-indent:2em;
+    margin-left: 20px;
+    float: left;
+}
+#products #product_detail_02{
+    margin: 30px auto;
+}
+
